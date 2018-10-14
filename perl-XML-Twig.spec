@@ -4,14 +4,14 @@
 #
 Name     : perl-XML-Twig
 Version  : 3.52
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.52.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.52.tar.gz
 Summary  : 'XML, The Perl Way'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-XML-Twig-bin
-Requires: perl-XML-Twig-man
+Requires: perl-XML-Twig-bin = %{version}-%{release}
+Requires: perl-XML-Twig-man = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(XML::Parser)
 
@@ -23,7 +23,7 @@ by chunk of huge documents.
 %package bin
 Summary: bin components for the perl-XML-Twig package.
 Group: Binaries
-Requires: perl-XML-Twig-man
+Requires: perl-XML-Twig-man = %{version}-%{release}
 
 %description bin
 bin components for the perl-XML-Twig package.
@@ -32,8 +32,8 @@ bin components for the perl-XML-Twig package.
 %package dev
 Summary: dev components for the perl-XML-Twig package.
 Group: Development
-Requires: perl-XML-Twig-bin
-Provides: perl-XML-Twig-devel
+Requires: perl-XML-Twig-bin = %{version}-%{release}
+Provides: perl-XML-Twig-devel = %{version}-%{release}
 
 %description dev
 dev components for the perl-XML-Twig package.
@@ -66,9 +66,9 @@ fi
 %install
 rm -rf %{buildroot}
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -77,8 +77,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/XML/Twig.pm
-/usr/lib/perl5/site_perl/5.26.1/XML/Twig/XPath.pm
+/usr/lib/perl5/vendor_perl/5.26.1/XML/Twig.pm
+/usr/lib/perl5/vendor_perl/5.26.1/XML/Twig/XPath.pm
 
 %files bin
 %defattr(-,root,root,-)
@@ -93,7 +93,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/XML::Twig.3
 
 %files man
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 /usr/share/man/man1/xml_grep.1
 /usr/share/man/man1/xml_merge.1
 /usr/share/man/man1/xml_pp.1
