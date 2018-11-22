@@ -4,7 +4,7 @@
 #
 Name     : perl-XML-Twig
 Version  : 3.52
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.52.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.52.tar.gz
 Summary  : 'XML, The Perl Way'
@@ -77,8 +77,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/XML/Twig.pm
-/usr/lib/perl5/vendor_perl/5.26.1/XML/Twig/XPath.pm
+/usr/lib/perl5/vendor_perl/5.28.0/XML/Twig.pm
+/usr/lib/perl5/vendor_perl/5.28.0/XML/Twig/XPath.pm
 
 %files bin
 %defattr(-,root,root,-)
