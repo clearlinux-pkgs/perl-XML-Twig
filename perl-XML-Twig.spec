@@ -77,8 +77,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.0/XML/Twig.pm
-/usr/lib/perl5/vendor_perl/5.28.0/XML/Twig/XPath.pm
+/usr/lib/perl5/vendor_perl/5.28.1XML/Twig.pm
+/usr/lib/perl5/vendor_perl/5.28.1XML/Twig/XPath.pm
 
 %files bin
 %defattr(-,root,root,-)
