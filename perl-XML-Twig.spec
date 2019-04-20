@@ -4,10 +4,10 @@
 #
 Name     : perl-XML-Twig
 Version  : 3.52
-Release  : 8
+Release  : 9
 URL      : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.52.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.52.tar.gz
-Summary  : 'XML, The Perl Way'
+Summary  : A module for easy processing of XML
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 Requires: perl-XML-Twig-bin = %{version}-%{release}
@@ -23,7 +23,6 @@ by chunk of huge documents.
 %package bin
 Summary: bin components for the perl-XML-Twig package.
 Group: Binaries
-Requires: perl-XML-Twig-man = %{version}-%{release}
 
 %description bin
 bin components for the perl-XML-Twig package.
@@ -34,6 +33,7 @@ Summary: dev components for the perl-XML-Twig package.
 Group: Development
 Requires: perl-XML-Twig-bin = %{version}-%{release}
 Provides: perl-XML-Twig-devel = %{version}-%{release}
+Requires: perl-XML-Twig = %{version}-%{release}
 
 %description dev
 dev components for the perl-XML-Twig package.
