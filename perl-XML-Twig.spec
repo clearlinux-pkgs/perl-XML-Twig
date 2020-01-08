@@ -4,14 +4,15 @@
 #
 Name     : perl-XML-Twig
 Version  : 3.52
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.52.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.52.tar.gz
-Summary  : A module for easy processing of XML
+Summary  : 'XML, The Perl Way'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 Requires: perl-XML-Twig-bin = %{version}-%{release}
 Requires: perl-XML-Twig-man = %{version}-%{release}
+Requires: perl-XML-Twig-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(XML::Parser)
 
@@ -47,14 +48,24 @@ Group: Default
 man components for the perl-XML-Twig package.
 
 
+%package perl
+Summary: perl components for the perl-XML-Twig package.
+Group: Default
+Requires: perl-XML-Twig = %{version}-%{release}
+
+%description perl
+perl components for the perl-XML-Twig package.
+
+
 %prep
 %setup -q -n XML-Twig-3.52
+cd %{_builddir}/XML-Twig-3.52
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -77,8 +88,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/XML/Twig.pm
-/usr/lib/perl5/vendor_perl/5.28.2/XML/Twig/XPath.pm
 
 %files bin
 %defattr(-,root,root,-)
@@ -99,3 +108,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man1/xml_pp.1
 /usr/share/man/man1/xml_spellcheck.1
 /usr/share/man/man1/xml_split.1
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/XML/Twig.pm
+/usr/lib/perl5/vendor_perl/5.30.1/XML/Twig/XPath.pm
