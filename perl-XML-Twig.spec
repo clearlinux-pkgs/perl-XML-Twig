@@ -4,7 +4,7 @@
 #
 Name     : perl-XML-Twig
 Version  : 3.52
-Release  : 18
+Release  : 19
 URL      : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.52.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.52.tar.gz
 Summary  : 'XML, The Perl Way'
