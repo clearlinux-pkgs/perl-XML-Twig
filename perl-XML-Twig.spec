@@ -6,10 +6,10 @@
 # autospec commit: 94c6be0
 #
 Name     : perl-XML-Twig
-Version  : 3.52
-Release  : 26
-URL      : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.52.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.52.tar.gz
+Version  : 3.53
+Release  : 27
+URL      : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.53.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.53.tar.gz
 Summary  : 'XML, The Perl Way'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
@@ -64,8 +64,8 @@ perl components for the perl-XML-Twig package.
 
 
 %prep
-%setup -q -n XML-Twig-3.52
-cd %{_builddir}/XML-Twig-3.52
+%setup -q -n XML-Twig-3.53
+cd %{_builddir}/XML-Twig-3.53
 
 %build
 export http_proxy=http://127.0.0.1:9/
