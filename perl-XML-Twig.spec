@@ -7,7 +7,7 @@
 #
 Name     : perl-XML-Twig
 Version  : 3.53
-Release  : 27
+Release  : 28
 URL      : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.53.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.53.tar.gz
 Summary  : 'XML, The Perl Way'
